@@ -1,0 +1,163 @@
+{
+  "info": {
+    "_postman_id": "f3fef6a5-a81c-4aa0-bae5-6d9704153e3c",
+    "name": "Dog API Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56453523",
+    "_collection_link": "https://go.postman.co/collection/56453523-f3fef6a5-a81c-4aa0-bae5-6d9704153e3c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Random Dog Image",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Статус код 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "pm.test(\"Ответ содержит картинку\", function () {\r",
+              "    pm.expect(pm.response.json().status).to.eql('success');\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://dog.ceo/api/breeds/image/random",
+          "protocol": "https",
+          "host": [
+            "dog",
+            "ceo"
+          ],
+          "path": [
+            "api",
+            "breeds",
+            "image",
+            "random"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Random Dog Image",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://dog.ceo/api/breeds/image/random",
+              "protocol": "https",
+              "host": [
+                "dog",
+                "ceo"
+              ],
+              "path": [
+                "api",
+                "breeds",
+                "image",
+                "random"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Wed, 08 Jul 2026 06:38:30 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Server",
+              "value": "cloudflare"
+            },
+            {
+              "key": "Nel",
+              "value": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}"
+            },
+            {
+              "key": "Report-To",
+              "value": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=CYKa4TVVCnH9dFKJZOpB5qZ9oNHN4SHayGTLh2leePhpSHfaYbMWtcyRLx%2BQN9Je5r9DXFa59MAaWq4pXgReEOTcKocnHTl%2BGPxPLy%2BwGAjQpepWVbfoP8JX\"}]}"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.3.31"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Xss-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "Cf-Cache-Status",
+              "value": "DYNAMIC"
+            },
+            {
+              "key": "Speculation-Rules",
+              "value": "\"/cdn-cgi/speculation\""
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "br"
+            },
+            {
+              "key": "CF-RAY",
+              "value": "a17d161db9eca430-LHR"
+            },
+            {
+              "key": "alt-svc",
+              "value": "h3=\":443\"; ma=86400"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"https://images.dog.ceo/breeds/pariah-indian/The_Indian_Pariah_Dog.jpg\",\n    \"status\": \"success\"\n}"
+        }
+      ]
+    }
+  ]
+}
